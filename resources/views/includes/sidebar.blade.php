@@ -60,8 +60,8 @@
                     <a href="#client" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Clients</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="client" class="collapse ">
                         <ul class="nav">
-                            <li><a href="page-profile.html" class="">Client Registration</a></li>
-                            <li><a href="page-profile.html" class="">Client List</a></li>
+                            <li><a href="{{route('client.index')}}" class="">Client Registration</a></li>
+                            <li><a href="{{route('client.show')}}" class="">Client List</a></li>
                             <li><a href="page-profile.html" class="">Purchase History</a></li>
                         </ul>
                     </div>

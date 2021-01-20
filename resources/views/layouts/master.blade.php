@@ -21,6 +21,12 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/hlo.png')}}">
+
+    <!------------Responsive Table cdn------------->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+ 
+       
+
 </head>
 
 <body>
@@ -59,6 +65,7 @@
 <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 <script src="{{asset('assets/scripts/klorofil-common.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 <!-- container-scroller -->
 <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
 {{--<script src="{{asset('assets/vendors/chart.js/Chart.min.js')}}"></script>--}}
@@ -71,6 +78,18 @@
 <script src="{{asset('assets/js/toastr.min.js')}}"></script>
 <script src="{{asset('assets/js/custom.js')}}"></script>
 <script src="{{asset('assets/js/file-upload.js')}}"></script>
+
+<!-------------Jquery table Script---------------->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                var table = $('#mytable').DataTable({
+                    responsive:true,
+                    "scrollX": true
+                });
+            });
+        </script>
 <script>
     toastr.options = {
         "debug": false,

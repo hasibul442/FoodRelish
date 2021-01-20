@@ -17,6 +17,7 @@ class ClientController extends Controller
     {
        return view('clients.create');
     }
+    
     public function client_display(){
         $clients = Client::all();
        return view('clients.show',compact('clients'));

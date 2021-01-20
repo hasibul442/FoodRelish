@@ -10,18 +10,14 @@
                 {{--                    <h3 class="panel-title">Vendors List</h3>--}}
                 {{--                </div>--}}
                 <div class="panel-body">
-                    <table class="table table-responsive">
+                    <table class="table"id="mytable">
                         <thead>
                         <tr>
                             <th> ID </th>
                             <th> Image</th>
-                            <th> Title </th>
-                            <th> First Name </th>
-                            <th> Last Name </th>
+                            <th> Name </th>
                             <th> Email </th>
-                            <th> Alternative Email </th>
                             <th> Phone </th>
-                            <th> Alternative Phone </th>
                             <th> Gender </th>
                             <th> Present Address</th>
                             <th> Permanent Address</th>
@@ -40,13 +36,12 @@
                                 <tr>
                                     <td>{{$client->id}}</td>
                                     <td><img src="{{asset('/assets/images/clients/'.$client->image)}}" width="100" height="100" alt=""class="img-fluid"></td>
-                                    <td>{{$client->title}}</td>
-                                    <td>{{$client->first_name}}</td>
-                                    <td>{{$client->last_name}}</td>
-                                    <td>{{$client->email}}</td>
-                                    <td>{{$client->alternative_email}}</td>
-                                    <td>{{$client->phone_number}}</td>
-                                    <td>{{$client->alternative_phone_number}}</td>
+                                    
+                                    <td>{{$client->title}} {{$client->first_name}} {{$client->last_name}}</td>
+                                   
+                                    <td>{{$client->email}}<br>{{$client->alternative_email}}</td>
+                                    <td>{{$client->phone_number}}<br>{{$client->alternative_phone_number}}</td>
+                                  
                                     <td>{{$client->gender}}</td>
                                     <td>{{$client->present_address}}</td>
                                     <td>{{$client->permanent_address}}</td>
