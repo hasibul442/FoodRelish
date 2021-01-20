@@ -56,7 +56,7 @@ class ClientController extends Controller
                 'gender'=>$request->gender,
                 'present_address'=>$request->present_address,
                 'permanent_address'=>$request->permanent_address,
-                'image'=>$document,
+                'image'=>$document_name,
                 'dob'=>$request->dob,
                 'age'=>$request->age,
                 'nid'=>$request->nid,
@@ -81,10 +81,16 @@ class ClientController extends Controller
     {
         return view('clients.profile');
     }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function profile($id)
     {
-        $clients = Client::find($id);
-        return view('clients.profile',compact('clients'));
+        $client = Client::find($id);
+        return view('clients.profile',compact('client'));
     }
     /**
      * Show the form for editing the specified resource.

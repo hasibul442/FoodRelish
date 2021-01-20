@@ -14,15 +14,9 @@
                         <thead>
                         <tr>
                             <th> ID </th>
-                            <th> Image</th>
                             <th> Name </th>
                             <th> Email </th>
                             <th> Phone </th>
-                            <th> Gender </th>
-                            <th> Present Address</th>
-                            <th> Permanent Address</th>
-                            <th> DOB</th>
-                            <th> Age</th>
                             <th> NID</th>
                             <th> Nationality</th>
                             <th> View</th>
@@ -35,22 +29,13 @@
                             @foreach($clients as $client)
                                 <tr>
                                     <td>{{$client->id}}</td>
-                                    <td><img src="{{asset('/assets/images/clients/'.$client->image)}}" width="100" height="100" alt=""class="img-fluid"></td>
-                                    
-                                    <td>{{$client->title}} {{$client->first_name}} {{$client->last_name}}</td>
-                                   
+                                    <td>{{$client->title}} {{$client->first_name}} {{$client->last_name}}</td>           
                                     <td>{{$client->email}}<br>{{$client->alternative_email}}</td>
                                     <td>{{$client->phone_number}}<br>{{$client->alternative_phone_number}}</td>
-                                  
-                                    <td>{{$client->gender}}</td>
-                                    <td>{{$client->present_address}}</td>
-                                    <td>{{$client->permanent_address}}</td>
-                                    <td>{{$client->dob}}</td>
-                                    <td>{{$client->age}}</td>
                                     <td>{{$client->nid}}</td>
                                     <td>{{$client->nationality}}</td>
                                     <td>
-                                        <form class="insert-form" id="insert-form" method="GET" action="#">
+                                        <form class="insert-form" id="insert-form" method="GET" action="{{route('client.profile', $client->id)}}">
                                             @csrf
                                             @method('GET')
                                             <button name="submit" class="btn btn-sm" id="submit"><span class="lnr lnr-database"></span></button>

@@ -55,3 +55,4 @@ Route::get('stock_display', 'StockController@stock_display')->name('stock.displa
 Route::resource('client', 'ClientController');
 Route::get('client', 'ClientController@index')->name('client.index');
 Route::get('client_display', 'ClientController@client_display')->name('client.show');
+Route::get('client_profile/{client}', 'ClientController@profile')->name('client.profile');
