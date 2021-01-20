@@ -19,7 +19,7 @@ class ClientController extends Controller
     }
     public function client_display(){
         $clients = Client::all();
-       return view('clients.create',compact('clients'));
+       return view('clients.show',compact('clients'));
     }
     /**
      * Show the form for creating a new resource.
@@ -55,7 +55,7 @@ class ClientController extends Controller
                 'gender'=>$request->gender,
                 'present_address'=>$request->present_address,
                 'permanent_address'=>$request->permanent_address,
-                'image'=>$request->image,
+                'image'=>$document,
                 'dob'=>$request->dob,
                 'age'=>$request->age,
                 'nid'=>$request->nid,
@@ -78,9 +78,13 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('clients.profile');
     }
-
+    public function profile($id)
+    {
+        $clients = Client::find($id);
+        return view('clients.profile',compact('clients'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

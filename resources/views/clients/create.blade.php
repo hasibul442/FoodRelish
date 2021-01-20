@@ -1,12 +1,12 @@
 @extends('layouts.master')
 @section('content')
-{{-- {!! Form::open(['class' =>'form-sample','route' => 'employee.store','method' => 'POST', 'enctype' => 'multipart/form-data']) !!} --}}
+{{-- {!! Form::open(['class' =>'form-sample','route' => 'client.store','method' => 'POST', 'enctype' => 'multipart/form-data']) !!} --}}
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
         <div class="panel">
             <div class="panel-heading">
-                <h3 class="panel-title">Add Employee</h3>
+                <h3 class="panel-title">Add Client</h3>
             </div>
             <div class="panel-body">
                 <form class="insert-form" id="insert-form" method="post"
@@ -148,7 +148,7 @@
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary btn-block" name="submit" id="submit">Create
-                            Employee</button>
+                            Client</button>
                     </div>
                 </form>
             </div>
