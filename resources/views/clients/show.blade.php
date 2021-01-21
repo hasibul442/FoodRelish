@@ -9,7 +9,9 @@
                 {{--                <div class="panel-heading">--}}
                 {{--                    <h3 class="panel-title">Vendors List</h3>--}}
                 {{--                </div>--}}
+                
                 <div class="panel-body">
+                <div id="buttons" style="float:right; padding-bottom:20px"></div>
                     <table class="table"id="mytable">
                         <thead>
                         <tr>
@@ -66,4 +68,43 @@
             </div>
         </div>
     </div>
+
+    <script>
+            $(document).ready(function(){
+                
+                var table = $('#mytable').DataTable({
+                    
+                    responsive:true,
+                    
+                });
+                var buttons = new $.fn.dataTable.Buttons(table, {
+                    buttons: [
+                        {
+                            extend: 'print',
+                            text: '<i class="fas fa-print text-primary"></i> Print',
+                            autoPrint: true,
+                        },
+                        {
+                            text:'<i class="fa fa-files-o "></i> Excel',
+                            className:'btn-primary',
+                            extend: 'excelHtml5',
+                            autoFilter: true,
+                            sheetName: 'Exported data'
+                        },
+                        {
+                        text: 'JSON',
+                            action: function ( e, dt, button, config ) {
+                            var data = dt.buttons.exportData();
+ 
+                                $.fn.dataTable.fileSave(
+                                    new Blob( [ JSON.stringify( data ) ] ),
+                                'Export.json'
+                                );
+                            }
+                        }
+                    ]
+                }).container().appendTo($('#buttons'));
+            });
+        </script>
+    
 @stop
