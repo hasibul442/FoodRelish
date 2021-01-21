@@ -13,9 +13,10 @@
                     action="{{ route('client.store') }}" enctype="multipart/form-data">
                     @csrf
 
+
                     <div class="row">
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="title">Title</label>
                                 <select class="form-control" name="title" id="title" required>
@@ -25,63 +26,23 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-
-                        <div class="col-sm-6">
+                        <div class="col-sm-9">
                             <div class="form-group">
-                                <label for="first_name">First Name</label>
-                                <input type="text" class="form-control" id="first_name" name="first_name"
-                                    placeholder="Enter First Name" required>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="last_name">Last Name</label>
-                                <input type="text" class="form-control" id="last_name" name="last_name"
-                                    placeholder="Enter Last Name" required>
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
                             </div>
                         </div>
 
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Enter Email Address" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-
-                            <div class="form-group">
-                                <label for="alternative_email">Alternative Email</label>
-                                <input type="email" class="form-control" id="alternative_email" name="alternative_email"
-                                    placeholder="Enter Email Address">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" required>
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="phone_number">Phone Number</label>
-                                <input type="text" class="form-control" id="phone_number" name="phone_number"
-                                    placeholder="+880123********" required>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-
-                            <div class="form-group">
-                                <label for="alternative_phone_number">Alternative Phone Number</label>
-                                <input type="text" class="form-control" id="alternative_phone_number"
-                                    name="alternative_phone_number" placeholder="+880123********">
-                            </div>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="+880123********" required>
                     </div>
 
                     <div class="form-group">
@@ -93,23 +54,10 @@
                         </select>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="present_address">Present Address</label>
-                                <textarea class="form-control" row="3" id="present_address" name="present_address"
-                                    required></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="permanent_address">Permanent Address</label>
-                                <textarea class="form-control" row="3" id="permanent_address" name="permanent_address"
-                                    required></textarea>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea class="form-control" rows="3" id="address" name="address" required placeholder="Address"></textarea>
                     </div>
-
 
                     <div class="form-group">
                         <label for="imageUpload">Upload Photo</label>
@@ -164,7 +112,7 @@
         { "name": "Algerians" },
         { "name": "Americans" },
         { "name": "Andorrans" },
-        { "name": "Bangladeshis" }
+        { "name": "Bangladeshis"}
     ]
     }
 

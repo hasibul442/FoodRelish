@@ -10,7 +10,8 @@
 {{--                    <h3 class="panel-title">Vendors List</h3>--}}
 {{--                </div>--}}
                 <div class="panel-body">
-                    <table class="table">
+                <div id="buttons" style="float:right;"></div>
+                    <table class="table" id="data_table">
                         <thead>
                         <tr>
                             <th> Batch ID </th>

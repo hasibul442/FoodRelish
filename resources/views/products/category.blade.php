@@ -9,7 +9,7 @@
                                 <h3 class="panel-title">Categories</h3>
                             </div>
                             <div class="panel-body" style="overflow-x: hidden; overflow-y: scroll; height: 186px;">
-                                <table class="table">
+                                <table class="table" id="data_table">
                                     <thead>
                                     <tr>
                                         <th> Id </th>
@@ -84,7 +84,7 @@
                                 <h3 class="panel-title">Subcategories</h3>
                             </div>
                               <div class="panel-body" style="overflow-x: hidden; overflow-y: scroll; height: 186px;">
-                                <table class="table">
+                                <table class="table" id="data_table_2">
                                     <thead>
                                     <tr>
                                         <th> Id </th>
@@ -177,7 +177,7 @@
                               <h3 class="panel-title">Child Categories</h3>
                           </div>
                           <div class="panel-body" style="overflow-x: hidden; overflow-y: scroll; height: 186px;">
-                              <table class="table" >
+                              <table class="table" id="data_table_3">
                                   <thead>
                                   <tr>
                                       <th> Id </th>
@@ -335,4 +335,19 @@
                   });
 
               </script>
+              <script>
+            $(document).ready(function(){
+                
+                var table = $('#data_table_2').DataTable({
+                    responsive:true,
+                    dom:'ltipr', 
+                });
+
+                var table = $('#data_table_3').DataTable({
+                    responsive:true,
+                    dom:'ltipr', 
+                  
+                });
+            });
+        </script>      
 @stop

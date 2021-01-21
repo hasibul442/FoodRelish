@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/linearicons/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/chartist/css/chartist-custom.css')}}">
+        <!------------Responsive Table cdn------------->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
+ 
+ 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
@@ -22,11 +27,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/hlo.png')}}">
 
-    <!------------Responsive Table cdn------------->
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
- 
- 
+
        
 
 </head>
@@ -88,7 +89,47 @@
         <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
-        
+
+<!-------------Data Table Custom Code---------------->
+  <script>
+            $(document).ready(function(){
+                
+                var table = $('#data_table').DataTable({
+                    
+                    responsive:true,
+                    dom:'ltipr',
+                    
+                    
+                });
+                var buttons = new $.fn.dataTable.Buttons(table, {
+                    buttons: [
+                        {
+                            extend: 'print',
+                            text: '<i class="fa fa-print text-primary"> Print</i>',
+                            autoPrint: true,
+                        },
+                        {
+                            text:'<i class="fa fa-files-o text-success"> Excel</i>',
+                            
+                            extend: 'excelHtml5',
+                            autoFilter: true,
+                            sheetName: 'Exported data'
+                        },
+                        {
+                            text:'<i class="fa fa-files-o text-warning"> JSON</i>',
+                            action: function ( e, dt, button, config ) {
+                            var data = dt.buttons.exportData();
+ 
+                                $.fn.dataTable.fileSave(
+                                    new Blob( [ JSON.stringify( data ) ] ),
+                                'Export.json'
+                                );
+                            }
+                        }
+                    ]
+                }).container().appendTo($('#buttons'));
+            });
+        </script>       
 <script>
     toastr.options = {
         "debug": false,

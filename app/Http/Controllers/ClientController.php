@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\Session;
 class ClientController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -47,15 +57,11 @@ class ClientController extends Controller
             $document->move(public_path().'/assets/images/clients/',$document_name);
             Client::create([
                 'title'=>$request->title,
-                'first_name'=>$request->first_name,
-                'last_name'=>$request->last_name,
+                'name'=>$request->name,
                 'email'=>$request->email,
-                'alternative_email'=>$request->alternative_email,
                 'phone_number'=>$request->phone_number,
-                'alternative_phone_number'=>$request->alternative_phone_number,
                 'gender'=>$request->gender,
-                'present_address'=>$request->present_address,
-                'permanent_address'=>$request->permanent_address,
+                'address'=>$request->address,
                 'image'=>$document_name,
                 'dob'=>$request->dob,
                 'age'=>$request->age,

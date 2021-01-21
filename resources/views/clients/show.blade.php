@@ -11,8 +11,8 @@
                 {{--                </div>--}}
                 
                 <div class="panel-body">
-                <div id="buttons" style="float:right; padding-bottom:20px"></div>
-                    <table class="table"id="mytable">
+                <div id="buttons" style="float:right;"></div>
+                    <table class="table"id="data_table">
                         <thead>
                         <tr>
                             <th> ID </th>
@@ -31,9 +31,9 @@
                             @foreach($clients as $client)
                                 <tr>
                                     <td>{{$client->id}}</td>
-                                    <td>{{$client->title}} {{$client->first_name}} {{$client->last_name}}</td>           
-                                    <td>{{$client->email}}<br>{{$client->alternative_email}}</td>
-                                    <td>{{$client->phone_number}}<br>{{$client->alternative_phone_number}}</td>
+                                    <td>{{$client->title}} {{$client->name}}</td>           
+                                    <td>{{$client->email}}</td>
+                                    <td>{{$client->phone_number}}</td>
                                     <td>{{$client->nid}}</td>
                                     <td>{{$client->nationality}}</td>
                                     <td>
@@ -69,42 +69,5 @@
         </div>
     </div>
 
-    <script>
-            $(document).ready(function(){
-                
-                var table = $('#mytable').DataTable({
-                    
-                    responsive:true,
-                    
-                });
-                var buttons = new $.fn.dataTable.Buttons(table, {
-                    buttons: [
-                        {
-                            extend: 'print',
-                            text: '<i class="fas fa-print text-primary"></i> Print',
-                            autoPrint: true,
-                        },
-                        {
-                            text:'<i class="fa fa-files-o "></i> Excel',
-                            className:'btn-primary',
-                            extend: 'excelHtml5',
-                            autoFilter: true,
-                            sheetName: 'Exported data'
-                        },
-                        {
-                        text: 'JSON',
-                            action: function ( e, dt, button, config ) {
-                            var data = dt.buttons.exportData();
- 
-                                $.fn.dataTable.fileSave(
-                                    new Blob( [ JSON.stringify( data ) ] ),
-                                'Export.json'
-                                );
-                            }
-                        }
-                    ]
-                }).container().appendTo($('#buttons'));
-            });
-        </script>
     
 @stop

@@ -11,7 +11,7 @@
                                 <div class="overlay"></div>
                                 <div class="profile-main">
                                     <img src="{{asset('/assets/images/clients/'.$client->image)}}" width="100" height="100" alt="">
-                                    <h3 class="name">{{$client->title}} {{$client->first_name}} {{$client->last_name}}</h3>
+                                    <h3 class="name">{{$client->title}} {{$client->name}}</h3>
                                     <span class="online-status status-available">Available</span>
                                 </div>
                                 <div class="profile-stat">
@@ -34,13 +34,10 @@
                                 <div class="profile-info">
                                     <h4 class="heading">Basic Info</h4>
                                     <ul class="list-unstyled list-justify">
-                                        <li>Name <span>{{$client->title}} {{$client->first_name}} {{$client->last_name}}</span></li>
-                                        <li>Mobile 1 <span>{{$client->phone_number}}</span></li>
-                                        <li>Mobile 2 <span>{{$client->alternative_phone_number}}</span></li>
-                                        <li>Email 1 <span>{{$client->email}} </span></li>
-                                        <li>Email 2 <span>{{$client->alternative_email}} </span></li>
-                                        <li>Present Address <span>{{$client->present_address}}</span></li>
-                                        <li>Permanent Address <span>{{$client->permanent_address}}</span></li>
+                                        <li>Name <span>{{$client->title}} {{$client->name}}</span></li>
+                                        <li>Phone Number<span>{{$client->phone_number}}</span></li>
+                                        <li>Email <span>{{$client->email}} </span></li>
+                                        <li>Address <span>{{$client->address}}</span></li>
                                         <li>Gender <span>{{$client->gender}}</span></li>
                                         <li>Birth of Date <span>{{$client->dob}}</span></li>
                                         <li>Age <span>{{$client->age}}</span></li>
