@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+<div style="padding-bottom: 7rem">
 <div class="card">
     <div class="card-body" style="background-color: #fff; color:#000">
         <h2 class="card-title text-center" style="font-weight: 700; padding-top: 3rem">Invoice/Bill</h2>
@@ -98,29 +99,38 @@
                             <td>146</td>
                             <td>856.00</td>
                         </tr>
+                        <tr>
+                            <td colspan="4" style="font-weight: 700; font-size:20px;">Taka in Words: Thirteen thousand forteen only.</td>
+                            <td style="font-weight: 550; font-size:16px;">Total = </td>
+                            <td style="font-weight: 550; font-size:16px;">13,014.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td style="font-weight: 550; font-size:16px;">Paid = </td>
+                            <td style="font-weight: 550; font-size:16px;">13,014.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td style="font-weight: 550; font-size:16px;">Due = </td>
+                            <td style="font-weight: 550; font-size:16px;">00.00</td>
+                        </tr>
 
                     </tbody>
                 </table>
             </div>
 
-            <div class="d-flex flex-row-reverse bg-dark text-white p-4">
-                <div class="py-3 px-5 text-right">
-                    <div class="mb-2">Grand Total</div>
-                    <div class="h2 font-weight-light">234,234</div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="text-decoration: overline; font-size:18px;font-weight: 550;">Sales Executive/SDM   </p>
                 </div>
-
-                <div class="py-3 px-5 text-right">
-                    <div class="mb-2">Discount</div>
-                    <div class="h2 font-weight-light">10%</div>
-                </div>
-
-                <div class="py-3 px-5 text-right">
-                    <div class="mb-2">Sub - Total amount</div>
-                    <div class="h2 font-weight-light">32,432</div>
+                <div class="col-sm-6">
+                    <p style="text-decoration: overline; font-size:18px;font-weight: 550; float:right">Signature of Recipient   </p>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+</div>
+
 @endsection
