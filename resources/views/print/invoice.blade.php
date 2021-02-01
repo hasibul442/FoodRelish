@@ -2,7 +2,11 @@
 @section('content')
 <div style="padding-bottom: 7rem">
 <div class="card">
+            
     <div class="card-body" style="background-color: #fff; color:#000">
+        <div class="text-right" style="padding:2rem">
+             <button class="btn btn-primary hidden-print" onclick="window.print()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+	    </div>
         <h2 class="card-title text-center" style="font-weight: 700; padding-top: 3rem">Invoice/Bill</h2>
         <div class="container-fluid">
             <div class="row">
@@ -24,7 +28,7 @@
             <hr style="border-top: 2px solid rgb(247, 0, 0);">
             <div class="row">
 
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                     <p style="font-weight: 700; font-size:20px;text-decoration: underline;">Bill To</p>
                     <p style="font-weight: bold; font-size:16px">Vendor Number:&nbsp;&nbsp;<span
                             style="font-weight: normal">0100000013</span></p>
@@ -39,7 +43,7 @@
                     </p>
 
                 </div>
-                <div class="col-sm-4 text-right">
+                <div class="col-sm-5 text-right">
                     <p class="card-title text-center" style="font-weight: 700; font-size:20px;">Payment Details</p>
                     <p style="font-weight: bold; font-size:16px">VAT:&nbsp;&nbsp;<span
                             style="font-weight: normal">12321</span></p>
@@ -118,19 +122,23 @@
                     </tbody>
                 </table>
             </div>
-
+<br>
+<br>
             <div class="row">
                 <div class="col-sm-6">
-                    <p style="text-decoration: overline; font-size:18px;font-weight: 550;">Sales Executive/SDM   </p>
+                    <p style="text-decoration: overline; font-size:18px;font-weight: 550;text-decoration-color: red;">Sales Executive/SDM   </p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-decoration: overline; font-size:18px;font-weight: 550; float:right">Signature of Recipient   </p>
+                    <p style="text-decoration: overline; font-size:18px;font-weight: 550; float:right;text-decoration-color: red;">Signature of Recipient   </p>
                 </div>
             </div>
+
+            
 
         </div>
     </div>
 </div>
 </div>
+
 
 @endsection
