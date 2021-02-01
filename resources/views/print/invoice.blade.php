@@ -111,8 +111,8 @@
                         </tr>
                         <tr>
                             <td colspan="4"></td>
-                            <td style="font-weight: 550; font-size:16px;">Due = </td>
-                            <td style="font-weight: 550; font-size:16px;">00.00</td>
+                            <td style="font-weight: 550; font-size:16px;color:red">Due = </td>
+                            <td style="font-weight: 550; font-size:16px;color:red">00.00</td>
                         </tr>
 
                     </tbody>
