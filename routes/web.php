@@ -56,3 +56,6 @@ Route::resource('client', 'ClientController');
 Route::get('client', 'ClientController@index')->name('client.index');
 Route::get('client_display', 'ClientController@client_display')->name('client.show');
 Route::get('client_profile/{client}', 'ClientController@profile')->name('client.profile');
+
+Route::resource('invoice', 'InvoiceController');
+Route::get('invoice','InvoiceController@index') -> name('invoice.index');
